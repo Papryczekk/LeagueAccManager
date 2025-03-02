@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using Newtonsoft.Json;
+using Microsoft.Win32;
 using MessageBox = System.Windows.MessageBox;
 using Window = System.Windows.Window;
 
@@ -17,6 +19,16 @@ namespace LeagueAccManager
         public MainWindow()
         {
             InitializeComponent();
+
+            if (!CheckSettingsFile())
+            {
+                TabControl.SelectedIndex = 2;
+
+                MessageBox.Show(
+                    "Due to the fact that you are launching the application for the first time, please select the path for the game.",
+                    "First launch", MessageBoxButton.OK);
+            }
+            
             LoadAccounts();
             InitializeRegions();
         }
@@ -24,6 +36,17 @@ namespace LeagueAccManager
         private void InitializeRegions()
         {
             Regions.ItemsSource = LeagueAccManager.Regions.GetRegions();
+        }
+
+        private bool CheckSettingsFile()
+        {
+            if (!File.Exists("settings.json"))
+            {
+                return false;
+            }
+            
+            string json = File.ReadAllText("settings.json");
+            return !string.IsNullOrWhiteSpace(json);
         }
 
         private void LoadAccounts()
@@ -295,6 +318,36 @@ namespace LeagueAccManager
             {
                 MessageBox.Show("Please select an account.");
             }
+        }
+
+        private void BrowseButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Executable files (*.exe)|*.exe|All files (*.*)|*.*";
+            openFileDialog.Title = "Select RiotClientServices.exe";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                PathTextBox.Text = openFileDialog.FileName;
+            }
+        }
+
+        private void SavePathButton_Click(object sender, RoutedEventArgs e)
+        {
+            var settings = new Settings
+            {
+                LeaguePath = PathTextBox.Text
+            };
+            
+            string json = JsonConvert.SerializeObject(settings, Formatting.Indented);
+            File.WriteAllText("settings.json", json);
+            
+            MessageBox.Show("Path saved successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void myTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            PlaceholderText.Visibility = string.IsNullOrEmpty(PathTextBox.Text) ? Visibility.Visible : Visibility.Collapsed;
         }
     }
 }    

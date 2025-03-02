@@ -12,7 +12,7 @@
     </Window.Resources>
     <!-- Main -->
     <Grid >
-        <TabControl BorderThickness="0" Background="#2C3E50">
+        <TabControl x:Name="TabControl" BorderThickness="0" Background="#2C3E50">
             <!-- Login Tab -->
             <TabItem Header="Login tab" Background="#2C3E50">
                 <TabItem.HeaderTemplate>
@@ -250,15 +250,57 @@
                 </TabItem.HeaderTemplate>
                 
                 <Grid Background="#2C3E50">
+                    <TextBlock Text="Settings"
+                               FontSize="30"
+                               FontWeight="Bold"
+                               Margin="0,20,0,0"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"
+                               Foreground="White"/>
+                    
                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Margin="0,30,0,0">
-                        <!-- Settings -->
-                        <TextBlock Text="Settings"
-                                   FontSize="30"
-                                   FontWeight="Bold"
-                                   Margin="0,20,0,0"
-                                   HorizontalAlignment="Center"
-                                   Foreground="White"/>
                         
+                        <TextBlock Text="Enter your path to League of Legends:"
+                                   FontSize="16"
+                                   Foreground="White"
+                                   Margin="0,0,0,10"/>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBox x:Name="PathTextBox"
+                                     Grid.Column="0"
+                                     Height="30"
+                                     IsReadOnly="True"
+                                     TextChanged="myTextBox_TextChanged"
+                                     Margin="0,0,5,0"
+                                     VerticalAlignment="Center"/>
+                            
+                            <TextBlock x:Name="PlaceholderText" 
+                                       Grid.Column="0"
+                                       Text="Default path is C:\Riot Games\Riot Client\RiotClientServices.exe" 
+                                       Foreground="Gray" 
+                                       Margin="5,0,0,0" 
+                                       VerticalAlignment="Center" />
+                            
+                            <Button x:Name="BrowseButton"
+                                    Grid.Column="1"
+                                    Content="..."
+                                    Width="30"
+                                    Height="30"
+                                    Click="BrowseButton_Click"/>
+                        </Grid>
+                        
+                        <Button Content="Save Path"
+                                Width="100"
+                                Height="30"
+                                Margin="0,20,0,0"
+                                HorizontalAlignment="Center"
+                                Click="SavePathButton_Click"/>
                         
                     </StackPanel>
                 </Grid>

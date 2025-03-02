@@ -67,6 +67,8 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Settings\Account.cs" />
+        <Compile Include="Settings\Settings.cs" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -86,7 +88,6 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Misc\AccLogin.cs" />
-        <Compile Include="Misc\Account.cs" />
         <Compile Include="Misc\LCU.cs" />
         <Compile Include="Misc\Regions.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -115,8 +116,6 @@
       <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.18362.2005" />
       <PackageReference Include="ModernWpfUI" Version="0.9.7-preview.2" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-      <PackageReference Include="OpenCvSharp4" Version="4.10.0.20241108" />
-      <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20241108" />
       <PackageReference Include="System.Buffers" Version="4.5.1" />
       <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="5.0.1" />
       <PackageReference Include="System.Drawing.Common" Version="5.0.2" />

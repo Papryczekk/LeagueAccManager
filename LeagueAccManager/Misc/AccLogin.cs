@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
+using Newtonsoft.Json;
 using WindowsInput;
 using WindowsInput.Native;
 
@@ -14,7 +16,14 @@ namespace LeagueAccManager
         {
             try
             {
-                var leaguePath = @"E:\Riot Games\Riot Client\RiotClientServices.exe";
+                string leaguePath = Settings.GetLeaguePathFromSettings();
+
+                if (string.IsNullOrEmpty(leaguePath) || !File.Exists(leaguePath))
+                {
+                    MessageBox.Show("Invalid League of Legends path. Please check your settings.");
+                    return;
+                }
+                
                 var arguments = "--launch-product=league_of_legends --launch-patchline=live";
                 
                 Logger.Log("Starting Riot Client...", LogType.Info);
