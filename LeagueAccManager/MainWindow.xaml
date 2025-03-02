@@ -146,6 +146,20 @@
                                     Margin="20,10,0,10"
                                     Height="30"
                                     Width="100"/>
+                            
+                            <Button x:Name="KillButton"
+                                    Content="Kill League Process"
+                                    ToolTip="If u want this option to work without problems just simply run this app as admin"
+                                    Click="KillButton_Click" 
+                                    Style="{StaticResource ButtonCustom}"
+                                    hc:BorderElement.CornerRadius="5"
+                                    hc:BackgroundSwitchElement.MouseHoverBackground="#f75265"
+                                    hc:BackgroundSwitchElement.MouseDownBackground="PaleVioletRed"
+                                    Background="Red"
+                                    Foreground="White"
+                                    Margin="20,10,0,10"
+                                    Height="30"
+                                    Width="110"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

@@ -31,6 +31,7 @@ namespace LeagueAccManager
             
             LoadAccounts();
             InitializeRegions();
+            LoadSettings();
         }
         
         private void InitializeRegions()
@@ -62,6 +63,20 @@ namespace LeagueAccManager
             }
             AccountsComboBox.ItemsSource = _accounts;
             NicknamesComboBox.ItemsSource = _accounts;
+        }
+        
+        private void LoadSettings()
+        {
+            if (File.Exists("settings.json"))
+            {
+                var json = File.ReadAllText("settings.json");
+                var settings = JsonConvert.DeserializeObject<Settings>(json);
+                PathTextBox.Text = settings?.LeaguePath ?? string.Empty;
+            }
+            else
+            {
+                PathTextBox.Text = string.Empty;
+            }
         }
 
         private void SaveAccounts()
@@ -348,6 +363,36 @@ namespace LeagueAccManager
         private void myTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             PlaceholderText.Visibility = string.IsNullOrEmpty(PathTextBox.Text) ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void KillButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string[] processesToKill = { "Riot Client", "RiotClientServices", "LeagueClient", "LeagueClientUx", "LeagueCrashHandler64", "League of Legends"  };
+
+                foreach (var processName in processesToKill)
+                {
+                    Process[] processes = Process.GetProcessesByName(processName);
+
+                    foreach (var process in processes)
+                    {
+                        try
+                        {
+                            process.Kill();
+                            process.WaitForExit();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Failed to kill process {processName}: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }    
