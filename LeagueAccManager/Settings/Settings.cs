@@ -27,5 +27,17 @@ namespace LeagueAccManager
             
             return null;
         }
+        
+        /*public static string SaveLeaguePathToSettings(string leaguePath)
+        {
+            if (!File.Exists(GetLeaguePathFromSettings()))
+            {
+                return null;
+            }
+            
+            string json = File.ReadAllText("settings.json");
+            var settings = JsonConvert.DeserializeObject<Settings>(json);
+            return settings.LeaguePath;
+        }*/
     }
 }

@@ -66,21 +66,28 @@
                             <TextBox x:Name="igName"
                                      FontSize="12"
                                      Height="20"
-                                     Width="250"
+                                     Width="240"
                                      Margin="0,5,0,33"/>
+                            
+                            <TextBlock Text="#"
+                                       FontSize="20"
+                                       Height="20"
+                                       Foreground="White"
+                                       Margin="4,5,0,40"/>
                             
                             <StackPanel>
                                 
+                            <TextBox x:Name="CustomTagTextBox"
+                                     Width="90"
+                                     Margin="4,5,0,0"
+                                     MaxLength="5"
+                                     ToolTip="Enter custom tag (ofc if u have it, if u have ur default tag from region leave this area empty) (max 5 characters)"/>
+                            
                             <ComboBox x:Name="Regions"
                                       Width="90"
                                       DisplayMemberPath="{x:Null}"
-                                      Margin="10,5,0,0"/>
+                                      Margin="4,5,0,0"/>
                             
-                            <TextBox x:Name="CustomTagTextBox"
-                                     Width="90"
-                                     Margin="10,5,0,0"
-                                     MaxLength="5"
-                                     ToolTip="Enter custom tag (ofc if u have it, if u have ur default tag from region leave this area empty) (max 5 characters)"/>
                             </StackPanel>
                             
                         </StackPanel>

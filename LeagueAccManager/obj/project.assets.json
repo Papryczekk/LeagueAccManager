@@ -2,6 +2,26 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
+      "Costura.Fody/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.8.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Costura.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "build/Costura.Fody.props": {},
+          "build/Costura.Fody.targets": {}
+        }
+      },
       "FlaUI.Core/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -37,6 +57,12 @@
           "lib/netstandard2.0/FlaUI.UIA3.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Fody/6.8.2": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
         }
       },
       "HandyControl/3.5.1": {
@@ -1012,6 +1038,26 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
+      "Costura.Fody/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.8.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Costura.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "build/Costura.Fody.props": {},
+          "build/Costura.Fody.targets": {}
+        }
+      },
       "FlaUI.Core/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1047,6 +1093,12 @@
           "lib/netstandard2.0/FlaUI.UIA3.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Fody/6.8.2": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
         }
       },
       "HandyControl/3.5.1": {
@@ -1954,6 +2006,26 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-arm64": {
+      "Costura.Fody/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.8.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Costura.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "build/Costura.Fody.props": {},
+          "build/Costura.Fody.targets": {}
+        }
+      },
       "FlaUI.Core/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1989,6 +2061,12 @@
           "lib/netstandard2.0/FlaUI.UIA3.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Fody/6.8.2": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
         }
       },
       "HandyControl/3.5.1": {
@@ -2896,6 +2974,26 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
+      "Costura.Fody/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.8.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Costura.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "build/Costura.Fody.props": {},
+          "build/Costura.Fody.targets": {}
+        }
+      },
       "FlaUI.Core/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -2931,6 +3029,12 @@
           "lib/netstandard2.0/FlaUI.UIA3.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Fody/6.8.2": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
         }
       },
       "HandyControl/3.5.1": {
@@ -3838,6 +3942,26 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
+      "Costura.Fody/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.8.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Costura.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "build/Costura.Fody.props": {},
+          "build/Costura.Fody.targets": {}
+        }
+      },
       "FlaUI.Core/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3873,6 +3997,12 @@
           "lib/netstandard2.0/FlaUI.UIA3.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Fody/6.8.2": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
         }
       },
       "HandyControl/3.5.1": {
@@ -4781,6 +4911,27 @@
     }
   },
   "libraries": {
+    "Costura.Fody/6.0.0": {
+      "sha512": "3Uriu9GJABMivG0wXMJs6NQ7FNE3pylir1gZEBAWDvpii3cnrmxXnOG44MMDuIVOIk/Xhef7WZFsaCNV+py9qA==",
+      "type": "package",
+      "path": "costura.fody/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Costura.Fody.props",
+        "build/Costura.Fody.targets",
+        "costura.fody.6.0.0.nupkg.sha512",
+        "costura.fody.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Costura.dll",
+        "lib/netstandard2.0/Costura.pdb",
+        "lib/netstandard2.0/Costura.xml",
+        "netclassicweaver/Costura.Fody.dll",
+        "netclassicweaver/Costura.Fody.xcf",
+        "netstandardweaver/Costura.Fody.dll",
+        "netstandardweaver/Costura.Fody.xcf"
+      ]
+    },
     "FlaUI.Core/4.0.0": {
       "sha512": "8GPCvcmRezKwgnYSULs1rU2iC+XvwiRE01ydU0/Uk+QAGzmvCwbMaCXDWJBLtRx0JXek5m21G7jGHTq3WkbTXA==",
       "type": "package",
@@ -4827,6 +4978,40 @@
         "lib/netcoreapp3.1/FlaUI.UIA3.xml",
         "lib/netstandard2.0/FlaUI.UIA3.dll",
         "lib/netstandard2.0/FlaUI.UIA3.xml"
+      ]
+    },
+    "Fody/6.8.2": {
+      "sha512": "sjGHrtGS1+kcrv99WXCvujOFBTQp4zCH3ZC9wo2LAtVaJkuLpHghQx3y4k1Q8ZKuDAbEw+HE6ZjPUJQK3ejepQ==",
+      "type": "package",
+      "path": "fody/6.8.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "build/Fody.targets",
+        "fody.6.8.2.nupkg.sha512",
+        "fody.nuspec",
+        "netclassictask/Fody.dll",
+        "netclassictask/FodyCommon.dll",
+        "netclassictask/FodyHelpers.dll",
+        "netclassictask/FodyIsolated.dll",
+        "netclassictask/Mono.Cecil.Pdb.dll",
+        "netclassictask/Mono.Cecil.Pdb.pdb",
+        "netclassictask/Mono.Cecil.Rocks.dll",
+        "netclassictask/Mono.Cecil.Rocks.pdb",
+        "netclassictask/Mono.Cecil.dll",
+        "netclassictask/Mono.Cecil.pdb",
+        "netstandardtask/Fody.dll",
+        "netstandardtask/FodyCommon.dll",
+        "netstandardtask/FodyHelpers.dll",
+        "netstandardtask/FodyIsolated.dll",
+        "netstandardtask/Mono.Cecil.Pdb.dll",
+        "netstandardtask/Mono.Cecil.Pdb.pdb",
+        "netstandardtask/Mono.Cecil.Rocks.dll",
+        "netstandardtask/Mono.Cecil.Rocks.pdb",
+        "netstandardtask/Mono.Cecil.dll",
+        "netstandardtask/Mono.Cecil.pdb",
+        "readme.md"
       ]
     },
     "HandyControl/3.5.1": {
@@ -6638,6 +6823,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
+      "Costura.Fody >= 6.0.0",
       "FlaUI.Core >= 4.0.0",
       "FlaUI.UIA3 >= 4.0.0",
       "HandyControl >= 3.5.1",
@@ -6706,6 +6892,12 @@
     "frameworks": {
       "net472": {
         "dependencies": {
+          "Costura.Fody": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
           "FlaUI.Core": {
             "target": "Package",
             "version": "[4.0.0, )"
