@@ -11,13 +11,13 @@
         <local:TagOrRegionConverter x:Key="TagOrRegionConverter" />
     </Window.Resources>
     <!-- Main -->
-    <Grid >
+    <Grid>
         <TabControl x:Name="TabControl" BorderThickness="0" Background="#2C3E50">
             <!-- Login Tab -->
             <TabItem Header="Login tab" Background="#2C3E50">
                 <TabItem.HeaderTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" Foreground="White"/>
+                        <TextBlock Text="{Binding}" Foreground="White" />
                     </DataTemplate>
                 </TabItem.HeaderTemplate>
                 <Grid Background="#2C3E50">
@@ -27,82 +27,82 @@
                                Margin="0,20,0,0"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Top"
-                               Foreground="White"/>
-                    
+                               Foreground="White" />
+
                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="350" Margin="0,30,0,0">
-                        <!-- Username --> 
-                        <TextBlock Text="Username:" 
-                                   FontSize="18" 
-                                   Foreground="White"/>
-                        
-                        <TextBox x:Name="UsernameTextBox" 
+                        <!-- Username -->
+                        <TextBlock Text="Username:"
+                                   FontSize="18"
+                                   Foreground="White" />
+
+                        <TextBox x:Name="UsernameTextBox"
                                  FontSize="12"
-                                 Margin="0,5,0,0"/>
-                        
+                                 Margin="0,5,0,0" />
+
                         <!-- Password -->
                         <TextBlock Text="Password:"
                                    FontSize="18"
-                                   Foreground="White" 
-                                   Margin="0,15,0,0"/>
-                        
+                                   Foreground="White"
+                                   Margin="0,15,0,0" />
+
                         <PasswordBox x:Name="PasswordBox"
                                      FontSize="12"
-                                     Margin="0,5,0,0"/>
-                            
+                                     Margin="0,5,0,0" />
+
                         <StackPanel Orientation="Horizontal">
-                        
+
                             <TextBlock Text="In-game name:"
                                        FontSize="18"
-                                       Foreground="White" 
-                                       Margin="0,15,0,0"/>
-                        
+                                       Foreground="White"
+                                       Margin="0,15,0,0" />
+
                             <TextBlock Text="Region:"
                                        FontSize="18"
                                        Foreground="White"
-                                       Margin="140,15,0,0"/>
+                                       Margin="140,15,0,0" />
                         </StackPanel>
-                        
+
                         <StackPanel Orientation="Horizontal">
                             <TextBox x:Name="igName"
                                      FontSize="12"
                                      Height="20"
                                      Width="240"
-                                     Margin="0,5,0,33"/>
-                            
+                                     Margin="0,5,0,33" />
+
                             <TextBlock Text="#"
                                        FontSize="20"
                                        Height="20"
                                        Foreground="White"
-                                       Margin="4,5,0,40"/>
-                            
+                                       Margin="4,5,0,40" />
+
                             <StackPanel>
-                                
-                            <TextBox x:Name="CustomTagTextBox"
-                                     Width="90"
-                                     Margin="4,5,0,0"
-                                     MaxLength="5"
-                                     ToolTip="Enter custom tag (ofc if u have it, if u have ur default tag from region leave this area empty) (max 5 characters)"/>
-                            
-                            <ComboBox x:Name="Regions"
-                                      Width="90"
-                                      DisplayMemberPath="{x:Null}"
-                                      Margin="4,5,0,0"/>
-                            
+
+                                <TextBox x:Name="CustomTagTextBox"
+                                         Width="90"
+                                         Margin="4,5,0,0"
+                                         MaxLength="5"
+                                         ToolTip="Enter custom tag (ofc if u have it, if u have ur default tag from region leave this area empty) (max 5 characters)" />
+
+                                <ComboBox x:Name="Regions"
+                                          Width="90"
+                                          DisplayMemberPath="{x:Null}"
+                                          Margin="4,5,0,0" />
+
                             </StackPanel>
-                            
+
                         </StackPanel>
-                        
+
                         <!-- Cbox with del button -->
                         <TextBlock Text="Choose Acc:"
                                    FontSize="18"
                                    Foreground="White"
-                                   Margin="0,25,0,0"/>
-                        
+                                   Margin="0,25,0,0" />
+
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                             <ComboBox x:Name="AccountsComboBox"
                                       Width="250"
                                       Margin="0,5,0,10">
-                                
+
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
@@ -112,24 +112,24 @@
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
-                                
+
                             </ComboBox>
                             <Button x:Name="DeleteButton"
-                                    Content="Delete Acc" 
-                                    Width="90" 
+                                    Content="Delete Acc"
+                                    Width="90"
                                     Click="DeleteButton_Click"
                                     Style="{StaticResource ButtonCustom}"
                                     hc:BackgroundSwitchElement.MouseHoverBackground="Red"
                                     hc:BackgroundSwitchElement.MouseDownBackground="PaleVioletRed"
                                     hc:BorderElement.CornerRadius="5"
                                     Background="White"
-                                    Margin="10,5,0,10"/>
+                                    Margin="10,5,0,10" />
                         </StackPanel>
-                        
+
                         <!-- Buttons -->
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button x:Name="SaveButton"
-                                    Content="Save Account" 
+                                    Content="Save Account"
                                     Click="SaveButton_Click"
                                     Style="{StaticResource ButtonCustom}"
                                     hc:BorderElement.CornerRadius="5"
@@ -139,11 +139,11 @@
                                     Foreground="White"
                                     Margin="0,10,0,10"
                                     Height="30"
-                                    Width="100"/>
-                            
+                                    Width="100" />
+
                             <Button x:Name="LoginButton"
                                     Content="Login To League"
-                                    Click="LoginButton_Click" 
+                                    Click="LoginButton_Click"
                                     Style="{StaticResource ButtonCustom}"
                                     hc:BorderElement.CornerRadius="5"
                                     hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
@@ -152,12 +152,12 @@
                                     Foreground="White"
                                     Margin="20,10,0,10"
                                     Height="30"
-                                    Width="100"/>
-                            
+                                    Width="100" />
+
                             <Button x:Name="KillButton"
                                     Content="Kill League Process"
                                     ToolTip="If u want this option to work without problems just simply run this app as admin"
-                                    Click="KillButton_Click" 
+                                    Click="KillButton_Click"
                                     Style="{StaticResource ButtonCustom}"
                                     hc:BorderElement.CornerRadius="5"
                                     hc:BackgroundSwitchElement.MouseHoverBackground="#f75265"
@@ -166,110 +166,268 @@
                                     Foreground="White"
                                     Margin="20,10,0,10"
                                     Height="30"
-                                    Width="110"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Grid>
-            </TabItem >
-            
-            <!-- Op.gg Tab -->
-            <TabItem Header="Misc" Background="#2C3E50">
-                <TabItem.HeaderTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}" Foreground="White"/>
-                    </DataTemplate>
-                </TabItem.HeaderTemplate>
-                
-                <Grid Background="#2C3E50">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Margin="0,30,0,0">
-                        <!-- ComboBox with nicknames -->
-                        <TextBlock Text="Choose Nickname:"
-                                   FontSize="18"
-                                   Foreground="White"
-                                   HorizontalAlignment="Center"
-                                   Margin="0,0,0,10"/>
-                        
-                        <ComboBox x:Name="NicknamesComboBox"
-                                  Width="250"
-                                  Margin="0,0,0,20">
-                            
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding InGameName}" />
-                                        <TextBlock Text=" #" />
-                                        <TextBlock Text="{Binding Converter={StaticResource TagOrRegionConverter}}" />
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
-                        
-                        <!-- Buttons -->
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Button x:Name="UggButton"
-                                    Content="u.gg" 
-                                    Click="UggButton_Click"
-                                    Style="{StaticResource ButtonCustom}"
-                                    hc:BorderElement.CornerRadius="5"
-                                    hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
-                                    hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
-                                    Background="#1568ed"
-                                    Foreground="White"
-                                    Margin="0,10,10,10"
-                                    Height="30"
-                                    Width="80"/>
-                            
-                            <Button x:Name="OpggButton"
-                                    Content="op.gg"
-                                    Click="OpggButton_Click"
-                                    Style="{StaticResource ButtonCustom}"
-                                    hc:BorderElement.CornerRadius="5"
-                                    hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
-                                    hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
-                                    Background="#1568ed"
-                                    Foreground="White"
-                                    Margin="10,10,10,10"
-                                    Height="30"
-                                    Width="80"/>
-                            
-                            <Button x:Name="DeeplolButton"
-                                    Content="deeplol.gg"
-                                    Click="DeeplolButton_Click"
-                                    Style="{StaticResource ButtonCustom}"
-                                    hc:BorderElement.CornerRadius="5"
-                                    hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
-                                    hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
-                                    Background="#1568ed"
-                                    Foreground="White"
-                                    Margin="10,10,10,10"
-                                    Height="30"
-                                    Width="80"/>
-                            
-                            <Button x:Name="DpmButton"
-                                    Content="dpm.lol"
-                                    Click="DpmButton_Click"
-                                    Style="{StaticResource ButtonCustom}"
-                                    hc:BorderElement.CornerRadius="5"
-                                    hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
-                                    hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
-                                    Background="#1568ed"
-                                    Foreground="White"
-                                    Margin="10,10,0,10"
-                                    Height="30"
-                                    Width="80"/>
+                                    Width="110" />
                         </StackPanel>
                     </StackPanel>
                 </Grid>
             </TabItem>
-            
+
+            <!-- Op.gg Tab -->
+            <TabItem Header="Misc" Background="#2C3E50">
+
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="White" />
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+
+                <Grid Background="#2C3E50">
+                    <TabControl x:Name="MiscTabControl" BorderThickness="0" Background="#2C3E50"
+                                Style="{StaticResource TabControlInLine}">
+                        <TabItem Header="Check account" Background="#2C3E50">
+                            <TabItem.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" Foreground="White" />
+                                </DataTemplate>
+                            </TabItem.HeaderTemplate>
+
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400"
+                                        Margin="0,30,0,0">
+                                <!-- ComboBox with nicknames -->
+                                <TextBlock Text="Choose Nickname:"
+                                           FontSize="18"
+                                           Foreground="White"
+                                           HorizontalAlignment="Center"
+                                           Margin="0,0,0,10" />
+
+                                <ComboBox x:Name="NicknamesComboBox"
+                                          Width="250"
+                                          Margin="0,0,0,20">
+
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding InGameName}" />
+                                                <TextBlock Text=" #" />
+                                                <TextBlock
+                                                    Text="{Binding Converter={StaticResource TagOrRegionConverter}}" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
+                                <!-- Buttons -->
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button x:Name="UggButton"
+                                            Content="u.gg"
+                                            Click="UggButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
+                                            Background="#1568ed"
+                                            Foreground="White"
+                                            Margin="0,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="OpggButton"
+                                            Content="op.gg"
+                                            Click="OpggButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
+                                            Background="#1568ed"
+                                            Foreground="White"
+                                            Margin="10,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="DeeplolButton"
+                                            Content="deeplol.gg"
+                                            Click="DeeplolButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
+                                            Background="#1568ed"
+                                            Foreground="White"
+                                            Margin="10,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="DpmButton"
+                                            Content="dpm.lol"
+                                            Click="DpmButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
+                                            Background="#1568ed"
+                                            Foreground="White"
+                                            Margin="10,10,0,10"
+                                            Height="30"
+                                            Width="80" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button x:Name="UggLiveGameButton"
+                                            Content="Live Game"
+                                            Click="UggLiveGameButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#f75265"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="PaleVioletRed"
+                                            Background="Red"
+                                            Foreground="White"
+                                            Margin="0,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="OpggLiveGameButton"
+                                            Content="Live Game"
+                                            Click="OpggLiveGameButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#f75265"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="PaleVioletRed"
+                                            Background="Red"
+                                            Foreground="White"
+                                            Margin="10,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="DeeplolLiveGameButton"
+                                            Content="Live Game"
+                                            Click="DeeplolLiveGameButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#f75265"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="PaleVioletRed"
+                                            Background="Red"
+                                            Foreground="White"
+                                            Margin="10,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="DpmLiveGameButton"
+                                            Content="Live Game"
+                                            Click="DpmLiveGameButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#f75265"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="PaleVioletRed"
+                                            Background="Red"
+                                            Foreground="White"
+                                            Margin="10,10,0,10"
+                                            Height="30"
+                                            Width="80" />
+                                </StackPanel>
+                            </StackPanel>
+                        </TabItem>
+
+                        <TabItem Header="Check champions" Background="#2C3E50">
+                            <TabItem.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" Foreground="White" />
+                                </DataTemplate>
+                            </TabItem.HeaderTemplate>
+
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="520"
+                                        Margin="0,30,0,0">
+                                <TextBlock Text="Choose champion:"
+                                           FontSize="18"
+                                           Foreground="White"
+                                           HorizontalAlignment="Center"
+                                           Margin="0,0,0,10" />
+
+                                <ComboBox x:Name="ChampionsComboBox"
+                                          Width="250"
+                                          IsEditable="True"
+                                          Margin="0,0,0,20" />
+
+
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button x:Name="UggButtonChampions"
+                                            Content="u.gg"
+                                            Click="UggButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
+                                            Background="#1568ed"
+                                            Foreground="White"
+                                            Margin="0,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="OpggButtonChampions"
+                                            Content="op.gg"
+                                            Click="OpggButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
+                                            Background="#1568ed"
+                                            Foreground="White"
+                                            Margin="10,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="DeeplolButtonChampions"
+                                            Content="deeplol.gg"
+                                            Click="DeeplolButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
+                                            Background="#1568ed"
+                                            Foreground="White"
+                                            Margin="10,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="DpmButtonChampions"
+                                            Content="dpm.lol"
+                                            Click="DpmButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
+                                            Background="#1568ed"
+                                            Foreground="White"
+                                            Margin="10,10,10,10"
+                                            Height="30"
+                                            Width="80" />
+
+                                    <Button x:Name="LolalyticsButtonChampions"
+                                            Content="lolalytics.com"
+                                            Click="LolalyticsButton_Click"
+                                            Style="{StaticResource ButtonCustom}"
+                                            hc:BorderElement.CornerRadius="5"
+                                            hc:BackgroundSwitchElement.MouseHoverBackground="#0548b3"
+                                            hc:BackgroundSwitchElement.MouseDownBackground="#0241a6"
+                                            Background="#1568ed"
+                                            Foreground="White"
+                                            Margin="10,10,0,10"
+                                            Height="30"
+                                            Width="80" />
+                                </StackPanel>
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+
             <!-- Settings Tab -->
             <TabItem Header="Settings" Background="#2C3E50">
                 <TabItem.HeaderTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" Foreground="White"/>
+                        <TextBlock Text="{Binding}" Foreground="White" />
                     </DataTemplate>
                 </TabItem.HeaderTemplate>
-                
+
                 <Grid Background="#2C3E50">
                     <TextBlock Text="Settings"
                                FontSize="30"
@@ -277,52 +435,52 @@
                                Margin="0,20,0,0"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Top"
-                               Foreground="White"/>
-                    
+                               Foreground="White" />
+
                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Margin="0,30,0,0">
-                        
+
                         <TextBlock Text="Enter your path to League of Legends:"
                                    FontSize="16"
                                    Foreground="White"
-                                   Margin="0,0,0,10"/>
-                        
+                                   Margin="0,0,0,10" />
+
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                                
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+
                             </Grid.ColumnDefinitions>
-                            
+
                             <TextBox x:Name="PathTextBox"
                                      Grid.Column="0"
                                      Height="30"
                                      IsReadOnly="True"
                                      TextChanged="myTextBox_TextChanged"
                                      Margin="0,0,5,0"
-                                     VerticalAlignment="Center"/>
-                            
-                            <TextBlock x:Name="PlaceholderText" 
+                                     VerticalAlignment="Center" />
+
+                            <TextBlock x:Name="PlaceholderText"
                                        Grid.Column="0"
-                                       Text="Default path is C:\Riot Games\Riot Client\RiotClientServices.exe" 
-                                       Foreground="Gray" 
-                                       Margin="5,0,0,0" 
+                                       Text="Default path is C:\Riot Games\Riot Client\RiotClientServices.exe"
+                                       Foreground="Gray"
+                                       Margin="5,0,0,0"
                                        VerticalAlignment="Center" />
-                            
+
                             <Button x:Name="BrowseButton"
                                     Grid.Column="1"
                                     Content="..."
                                     Width="30"
                                     Height="30"
-                                    Click="BrowseButton_Click"/>
+                                    Click="BrowseButton_Click" />
                         </Grid>
-                        
+
                         <Button Content="Save Path"
                                 Width="100"
                                 Height="30"
                                 Margin="0,20,0,0"
                                 HorizontalAlignment="Center"
-                                Click="SavePathButton_Click"/>
-                        
+                                Click="SavePathButton_Click" />
+
                     </StackPanel>
                 </Grid>
             </TabItem>

@@ -7,7 +7,7 @@ namespace LeagueAccManager
 {
     public static class ProfileLinkHandler
     {
-        public static void OpenUggProfile(Account selectedAccount)
+        public static void OpenUggProfile(Account selectedAccount, bool isLiveGame = false)
         {
             if (selectedAccount != null)
             {
@@ -43,7 +43,7 @@ namespace LeagueAccManager
                     summonerName += $"-{selectedAccount.Region}";
                 }
                 
-                string uggUrl = $"https://u.gg/lol/profile/{uggRegion}/{summonerName}/overview";
+                string uggUrl = isLiveGame ? $"https://u.gg/lol/profile/{uggRegion}/{summonerName}/live-game" : $"https://u.gg/lol/profile/{uggRegion}/{summonerName}/overview";
 
                 try
                 {
@@ -61,7 +61,7 @@ namespace LeagueAccManager
             }
         }
 
-        public static void OpenOpggProfile(Account selectedAccount)
+        public static void OpenOpggProfile(Account selectedAccount, bool isLiveGame = false)
         {
             if (selectedAccount != null)
             {
@@ -76,7 +76,7 @@ namespace LeagueAccManager
                     summonerName += $"-{selectedAccount.Region}";
                 }
                 
-                string opggUrl = $"https://op.gg/summoners/{selectedAccount.Region}/{summonerName}";
+                string opggUrl = isLiveGame ? $"https://op.gg/summoners/{selectedAccount.Region}/{summonerName}/ingame" : $"https://op.gg/summoners/{selectedAccount.Region}/{summonerName}";
 
                 try
                 {
@@ -94,7 +94,7 @@ namespace LeagueAccManager
             }
         }
 
-        public static void OpenDeeplolProfile(Account selectedAccount)
+        public static void OpenDeeplolProfile(Account selectedAccount, bool isLiveGame = false)
         {
             if (selectedAccount != null)
             {
@@ -130,7 +130,7 @@ namespace LeagueAccManager
                     summonerName += $"-{selectedAccount.Region}";
                 }
                 
-                string deeplolUrl = $"https://www.deeplol.gg/summoner/{deeplolRegion}/{summonerName}";
+                string deeplolUrl = isLiveGame ? $"https://www.deeplol.gg/summoner/{deeplolRegion}/{summonerName}/ingame" : $"https://www.deeplol.gg/summoner/{deeplolRegion}/{summonerName}";
 
                 try
                 {
@@ -148,7 +148,7 @@ namespace LeagueAccManager
             }
         }
 
-        public static void OpenDpmProfile(Account selectedAccount)
+        public static void OpenDpmProfile(Account selectedAccount, bool isLiveGame = false)
         {
             if (selectedAccount != null)
             {
@@ -163,7 +163,7 @@ namespace LeagueAccManager
                     summonerName += $"-{selectedAccount.Region}";
                 }
                 
-                string dpmUrl = $"https://dpm.lol/{summonerName}";
+                string dpmUrl = isLiveGame ? $"https://dpm.lol/{summonerName}/live" : $"https://dpm.lol/{summonerName}";
 
                 try
                 {

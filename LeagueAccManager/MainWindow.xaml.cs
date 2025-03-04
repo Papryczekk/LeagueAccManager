@@ -19,7 +19,7 @@ namespace LeagueAccManager
         public MainWindow()
         {
             InitializeComponent();
-
+                
             if (!CheckSettingsFile())
             {
                 TabControl.SelectedIndex = 2;
@@ -31,6 +31,7 @@ namespace LeagueAccManager
             
             LoadAccounts();
             InitializeRegions();
+            LoadChampionsAsync();
             LoadSettings();
         }
         
@@ -77,6 +78,13 @@ namespace LeagueAccManager
             {
                 PathTextBox.Text = string.Empty;
             }
+        }
+
+        private async void LoadChampionsAsync()
+        {
+            var championNames = await ChampionDataHandler.GetChampionsNamesAsync();
+            
+            ChampionsComboBox.ItemsSource = championNames;
         }
 
         private void SaveAccounts()
@@ -155,26 +163,88 @@ namespace LeagueAccManager
 
         private void UggButton_Click(object sender, RoutedEventArgs e)
         {
-            var selectedAccount = NicknamesComboBox.SelectedItem as Account;
-            ProfileLinkHandler.OpenUggProfile(selectedAccount);
+            if (MiscTabControl.SelectedIndex == 0)
+            {
+                var selectedAccount = NicknamesComboBox.SelectedItem as Account;
+                ProfileLinkHandler.OpenUggProfile(selectedAccount);
+            }
+            else if (MiscTabControl.SelectedIndex == 1)
+            {
+                var selectedChampion = ChampionsComboBox.SelectedItem as string;
+                ChampionDataHandler.OpenUggChampionProfile(selectedChampion);
+            }
+            
         }
 
         private void OpggButton_Click(object sender, RoutedEventArgs e)
         {
-            var selectedAccount = NicknamesComboBox.SelectedItem as Account;
-            ProfileLinkHandler.OpenOpggProfile(selectedAccount);
+            if (MiscTabControl.SelectedIndex == 0)
+            {
+                var selectedAccount = NicknamesComboBox.SelectedItem as Account;
+                ProfileLinkHandler.OpenOpggProfile(selectedAccount);
+            }
+            else if (MiscTabControl.SelectedIndex == 1)
+            {
+                var selectedChampion = ChampionsComboBox.SelectedItem as string;
+                ChampionDataHandler.OpenOpggChampionProfile(selectedChampion);    
+            }
         }
 
         private void DeeplolButton_Click(object sender, RoutedEventArgs e)
         {
-            var selectedAccount = NicknamesComboBox.SelectedItem as Account;
-            ProfileLinkHandler.OpenDeeplolProfile(selectedAccount);
+            if (MiscTabControl.SelectedIndex == 0)
+            {
+                var selectedAccount = NicknamesComboBox.SelectedItem as Account;
+                ProfileLinkHandler.OpenDeeplolProfile(selectedAccount);
+            }
+            else if (MiscTabControl.SelectedIndex == 1)
+            {
+                var selectedChampion = ChampionsComboBox.SelectedItem as string;
+                ChampionDataHandler.OpenDeeplolChampionProfile(selectedChampion);
+            }
         }
 
         private void DpmButton_Click(object sender, RoutedEventArgs e)
         {
+            if (MiscTabControl.SelectedIndex == 0)
+            {
+                var selectedAccount = NicknamesComboBox.SelectedItem as Account;
+                ProfileLinkHandler.OpenDpmProfile(selectedAccount);
+            }
+            else if (MiscTabControl.SelectedIndex == 1)
+            {
+                var selectedChampion = ChampionsComboBox.SelectedItem as string;
+                ChampionDataHandler.OpenDpmChampionProfile(selectedChampion);
+            }
+        }
+        
+        private void UggLiveGameButton_Click(object sender, RoutedEventArgs e)
+        {
             var selectedAccount = NicknamesComboBox.SelectedItem as Account;
-            ProfileLinkHandler.OpenDpmProfile(selectedAccount);
+            ProfileLinkHandler.OpenUggProfile(selectedAccount, true);
+        }
+
+        private void OpggLiveGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedAccount = NicknamesComboBox.SelectedItem as Account;
+            ProfileLinkHandler.OpenOpggProfile(selectedAccount, true);
+        }
+
+        private void DeeplolLiveGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedAccount = NicknamesComboBox.SelectedItem as Account;
+            ProfileLinkHandler.OpenDeeplolProfile(selectedAccount, true);
+        }
+
+        private void DpmLiveGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedAccount = NicknamesComboBox.SelectedItem as Account;
+            ProfileLinkHandler.OpenDpmProfile(selectedAccount, true);
+        }
+        private void LolalyticsButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedChampion = ChampionsComboBox.SelectedItem as string;
+            ChampionDataHandler.OpenLolalyticsChampionProfile(selectedChampion);
         }
 
         private void BrowseButton_Click(object sender, RoutedEventArgs e)
@@ -236,5 +306,7 @@ namespace LeagueAccManager
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        
     }
 }    

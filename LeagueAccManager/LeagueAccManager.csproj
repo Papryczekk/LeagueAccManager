@@ -67,6 +67,7 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Misc\ChampionDataHandler.cs" />
         <Compile Include="Misc\ProfileLinkHandler.cs" />
         <Compile Include="Settings\Account.cs" />
         <Compile Include="Settings\Settings.cs" />
