@@ -54,6 +54,13 @@ namespace LeagueAccManager
                     return;
                 }
                 
+                bool isReady = await IsLoginFormReady(riotClientHandle);
+                if (!isReady)
+                {
+                    MessageBox.Show("Riot Client login form is not ready.");
+                    return;
+                }
+                
                 if (NativeImports.IsIconic(riotClientHandle))
                 {
                     Logger.Log("Restoring Riot Client window...", LogType.Warning);
@@ -93,6 +100,28 @@ namespace LeagueAccManager
             {
                 MessageBox.Show($"Error starting League of Legends: {ex.Message}");
             }
+        }
+
+        private static async Task<bool> IsLoginFormReady(IntPtr windowHandle)
+        {
+            if (NativeImports.IsWindowVisible(windowHandle) && NativeImports.IsWindowEnabled(windowHandle))
+            {
+                Color expectedFieldColor = Color.FromArgb(252, 252, 252);
+
+                int checks = 0;
+                while (checks < 20)
+                {
+                    Color pixelColor = Image.GetPixelColor(400, 300);
+                    if (pixelColor == expectedFieldColor)
+                    {
+                        return true;
+                    }
+
+                    await Task.Delay(250);
+                    checks++;
+                }
+            }
+            return false;
         }
     }
 }
